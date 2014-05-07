@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<htmL>
+  <head>
+    <title>MTA SS2014 &Uuml;bung 1</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+
+
+<h2>MTA Aufgabe 1</h2>
+<br/><br/>
+
+<h3>1. Aufgabe</h3>
+<p class="aufgabe">
+  Erzeuge zwei kurze Audio-Files (max. 20 s), davon eines mit Music von einer CD deiner Wahl (wobei sich Music mit
+  einer relativ hohen Dynamik, d.h. Wechsel zwischen relativ leisen und lauten Abschnitten empfiehlt). W&auml;hle
+  eine geeignete Abtastfrequenz (begr&uuml;nden !) und achte auf gute Aussteuerung. Das zweite Audio-File soll eine
+  Sprachaufnahme (mit dem Headset aufgesprochen) enthalten (auf &Uuml;bersteuerung achten !). W&auml;hle hier eine
+  Abstastfrequenz von 22 kHz, 16 bit Aufl&ouml;sung, mono. Die Einstellungen wie Abtastrate, Bitzahl und Kanalzahl
+  k&ouml;nnen in Wavestudio Samplitude vorgenommen werden. Die Eingangsquelle (wahlweise Audio-CD oder Mikrofon) kann
+  im Windows-Mixer 'Aufnahme' eingestellt werden. Lies beide Wave-Files mit wave_io ein und erkl&auml;re die Angaben
+  im Header ! Wie hoch ist die Bitrate f&uuml;r die beiden Dateien?
+</p>
+<p class="antwort">
+Ich bin die Antwort
+</p>
+
+<h3>2. Aufgabe - Aliasing</h3>
+<h4>2.1</h4>
+<p class="aufgabe">
+  Modifiziere wave_io dahingehend, dass die Samples in der WAV-Datei in eine (lesbare) ASCII-Datei geschrieben
+  werden. Lies die Dateien sine_lo.wav und sine_hi.wav 
+  (Sampling-Frequenz: 16 kHz) ein und bestimme aus den resultierenden Zahlenfolgen in der ASCII-Datei
+  die Frequenz der Sinus-Schwingungen (Begr&uuml;nden und jeweils eine Periode f&uuml;r das Protokoll abspeichern).
+  &Uuml;berpr&uuml;fe Deine Sch&auml;tzung mit dem Spektralanalyse-Tool GRAM (Plots ins Protokoll !).
+  Vorgehensweise: Men&uuml;punkt Analyze File, Einstellungen: Freq Scale: Linear, FFT Size: 512, Time scale: 1 msec)
+<p>
+<p class="antwort">
+  Ich bin die Antwort.
+</p>
+
+<h4>2.2</h4>
+<p class="aufgabe">
+  Bei der zeitlichen Diskretisierung eines Analogsignals mu&szlig; das sogenannte Abtasttheorem eingehalten werden.
+  Wie lautet es und wie l&auml;&szlig;t sich der Grenzfall, f&uuml;r den es gerade noch gilt,
+  illustrieren (Zeichnung !)?
+<p class="antwort">
+  Ich bin die Antwort.
+</p>
+
+<h4>2.3</h4>
+<p class="aufgabe">
+  Bei herk&ouml;mmlichen Soundkarten tritt systembedingt kein Aliasing auf, weil das Audiosignal stets geeignet
+  vorbehandelt wird (wie ?). Mit einem kleinen Trick l&auml;&szlig;t sich Aliasing jedoch nachweisen.
+  Diese auch als Down-Sampling bekannte Methode besteht darin, dass man bei einer WAV-Datei z.B. jeden zweiten
+  Abtastwert wegwirft. Man erh&auml;lt so eine Wellenform, die genau die H&auml;lfte der urspr&uuml;nglichen
+  Abtastfrequenz aufweist. Wenn man das Signal nicht vorher bandbegrenzt hat, k&ouml;nnen Aliasing-Verzerrungen
+  h&ouml;rbar werden.
+</p>
+<p class="antwort">
+  Ich bin die Antwort.
+</p>
+
+<h4>2.4</h4>
+<p class="aufgabe">
+  Modifiziere wave_io dahingehend, dass vom eingelesenen Signal jeder zweite Abtastwert verworfen wird und das
+  resultierende Signal abgespeichert wird. Der Header mu&szlig; nat&uuml;rlich entsprechend ver&auml;ndert werden!
+  Wende das resultierende Programm zun&auml;chst auf 'sine_lo.wav' und 'sine_hi.wav' an. Welche Frequenzen erscheinen
+  nach dem Down-Sampling (Spektrogramm und WAVs ins Protokoll !)? Was w&uuml;rde passieren, wenn man geeignet
+  bandbegrenzen w&uuml;rde?
+</p>
+<p class="antwort">
+  Ich bin die Antwort.
+</p>
+
+<h3>3. Aufgabe - Bitreduzierung</h3>
+<h4>3.1</h4>
+<p class="aufgabe">
+  Die herk&ouml;mmlichen PC-Soundkarten arbeiten meist entweder mit 16 oder 8 bit-Aufl&ouml;sung.
+  Wie gro&szlig; ist die Anzahl der bei diesen beiden Werten darstellbaren Amplitudenwerten ?
+</p>
+<p class="antwort">
+  Ich bin die Antwort.
+</p>
+
+<h4>3.2</h4>
+<p class="aufgabe">
+  Wir wollen nun wave_io so modifizieren, dass wir die Bitzahl reduzieren k&ouml;nnen.
+  Dazu k&ouml;nnen wir z.B. alle Samples durch eine Potenz von 2 teilen (Integer-Division ohne Rest).
+  Damit das resultierende Signal nicht leiser wird als das Original, kompensieren wir die Operation durch
+  Multiplikation mit derselben Zweierpotenz. Zu beachten: Der Datentyp hat nach wie vor 16 bit!
+  (Denselben Effekt erreicht man auch durch einfaches logisches 'Verunden' mit einem entsprechenden HEX-Wert,
+  indem man mit dem LSB beginnend Bits 'ausblendet'.)
+</p>
+<p class="antwort">
+  Ich bin die Antwort.
+</p>
+
+<h4>3.3</h4>
+<p class="aufgabe">
+  Mit dem entstandenen Programm ver&auml;ndern wir die in Aufgabe 1 erzeugten Wave-Dateien.
+  Ab welcher Bitzahl tritt bei Musik/Sprache eine h&ouml;rbare/deutliche Verschlechterung der Qualit&auml;t ein?
+  Bei wieviel Bit ist das Sprachsignal noch verst&auml;ndlich ?
+  (Waves f&uuml;r all diese F&auml;lle ins Protokoll, Ausschnitte als Plots)
+</p>
+<p class="antwort">
+  Ich bin die Antwort.
+</p>
+
+<h4>3.4</h4>
+<p class="aufgabe">
+  Modifiziere Dein Programm noch einmal so, dass auch das Differenzsignal zwischen Original und bitreduziertem
+  Signal, das hei&szlig;t, das Quantisierungsrauschen ausgegeben werden kann.
+  Welchen Charakter hat das Rauschen bei einer Reduktion um 1 bit, wie ver&auml;ndert es sich bei zunehmender
+  Bit-Reduktion? (Waves f&uuml;r all diese F&auml;lle ins Protokoll, Ausschnitte als Plots)
+</p>
+<p class="antwort">
+  Ich bin die Antwort
+</p>
+
+  </body>
+</html>

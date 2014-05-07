@@ -1,0 +1,12 @@
+body {
+  background-color: #FCFFF5;
+  text-size: 1em;
+  text-color: #000000;
+  font-family: helvetica, verdana, arial, sans-serif;
+  font-size: 0.9em;
+}
+
+.aufgabe {
+  font-size: 0.8em;
+  font-style: italic;
+}
