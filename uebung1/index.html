@@ -29,7 +29,7 @@ Ich bin die Antwort
 <h4>2.1</h4>
 <p class="aufgabe">
   Modifiziere wave_io dahingehend, dass die Samples in der WAV-Datei in eine (lesbare) ASCII-Datei geschrieben
-  werden. Lies die Dateien sine_lo.wav und sine_hi.wav 
+  werden. Lies die Dateien sine_lo.wav und sine_hi.wav
   (Sampling-Frequenz: 16 kHz) ein und bestimme aus den resultierenden Zahlenfolgen in der ASCII-Datei
   die Frequenz der Sinus-Schwingungen (Begr&uuml;nden und jeweils eine Periode f&uuml;r das Protokoll abspeichern).
   &Uuml;berpr&uuml;fe Deine Sch&auml;tzung mit dem Spektralanalyse-Tool GRAM (Plots ins Protokoll !).
@@ -45,7 +45,14 @@ Ich bin die Antwort
   Wie lautet es und wie l&auml;&szlig;t sich der Grenzfall, f&uuml;r den es gerade noch gilt,
   illustrieren (Zeichnung !)?
 <p class="antwort">
-  Ich bin die Antwort.
+  Das Abtasttheorem besagt dass die Abtastfrequenz gr&ouml;sser als die doppelte, im abzutastenden Signal vorhandene
+  h&ouml;chste Frequenz, sein muss.
+  <br/><br/><img src="img/abtasttheorem.png" height="20"><br/><br/>
+  Falls die Abtastfrequenz exakt der doppelten H&ouml;chstfrequenz entspricht
+  KANN eine Abtastung m&ouml;glich sein wenn man genau die Maximalausschl&auml;ge der Schwingung trifft (In Illustration gr&uuml;n dargestellt).
+  Im ung&uuml;nstigsten Fall ist die Schwingung jedoch phasenverschoben, sodass man nicht die
+  Maximalausschl&auml;ge, sondern genau die Nulldurchg&auml;nge abtastet. (In Illustration rot dargestellt).
+  <br/><br/><img src="img/illustration_abtasttheorem.png"><br/><br/>
 </p>
 
 <h4>2.3</h4>
