@@ -217,11 +217,18 @@ Die Datei sine_lo_down.wav entspricht der Originaldatei sine_lo.wav da die Ausga
   Ab welcher Bitzahl tritt bei Musik/Sprache eine h&ouml;rbare/deutliche Verschlechterung der Qualit&auml;t ein?
   Bei wieviel Bit ist das Sprachsignal noch verst&auml;ndlich ?
   (Waves f&uuml;r all diese F&auml;lle ins Protokoll, Ausschnitte als Plots)
+Was charakterisiert das entstehende Quantisierungsger&auml;usch und macht es besonders st&ouml;rend?
 </p>
 <p class="antwort">
-  Ich bin die Antwort.
+  Bei Musik tritt bei einer <a href="files/youtube_bitreduzierung2hoch10.wav">Bitreduktion von 10 Bit</a> Eine deutliche Verschlechterung der Qualit&auml;t auf.<br/><br/>
+  <img src="img/youtube_bitreduzierung2hoch10.png"/><br/><br/>
+  Das Sprachsignal ist bei <a href="files/aufnahme-2hoch11.wav">11 Bit Reduktion</a> gerade noch verst&auml;ndlich.<br/>
+  <img src="img/aufnahme_2hoch11.jpg"/><br/><br/>
+  <a href="files/aufnahme-2hoch12.wav">Bei 12 Bit jedoch nicht mehr.</a><br/>
+  <img src="img/aufnahme_2hoch12.jpg"/><br/>
+Das Quantisierungsrauschen ist nicht permanent vorhanden, sondern tritt nur in Passagen mit Ton auf.
+Das macht es f&uuml;r den H&ouml;rer sehr schwer das Nutzsignal akustisch vom Quantisierungsrauschen zu trennen.
 </p>
-
 <h4>3.4</h4>
 <p class="aufgabe">
   Modifiziere Dein Programm noch einmal so, dass auch das Differenzsignal zwischen Original und bitreduziertem
