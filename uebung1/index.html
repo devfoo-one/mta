@@ -200,13 +200,9 @@ Die Datei sine_lo_down.wav entspricht der Originaldatei sine_lo.wav da die Ausga
   in wave_io wurde folgender Code eingef&uuml;gt:
   <pre>
   read_wave(&wave, &n_wave, &freq_in, &bits_in, in_name, &header);
-  newwave = (short*)malloc(n_wave*sizeof(short)); //Speicher alloziieren
   for(i=0; i < n_wave; i++) {
-	newwave[i] = wave[i];
 	wave[i] /= pow(2,10);
 	wave[i] *= pow(2,10);
-	wave[i] -= newwave[i]; //Differenzsignal fuer Aufgabe 3.4
-	wave[i] *= pow(2,16-10-2); //Q-Fehler verst&auml;rken
   }
   </pre>
 </p>
@@ -237,7 +233,28 @@ Das macht es f&uuml;r den H&ouml;rer sehr schwer das Nutzsignal akustisch vom Qu
   Bit-Reduktion? (Waves f&uuml;r all diese F&auml;lle ins Protokoll, Ausschnitte als Plots)
 </p>
 <p class="antwort">
-  Ich bin die Antwort
+  folgender Code wurde in wave_io eingef&uuml;gt:
+<pre>
+for(i=0; i &lt; n_wave; i++) {
+	newwave[i] = wave[i];
+	wave[i] /= pow(2,10);
+	wave[i] *= pow(2,10);
+	wave[i] -= newwave[i]; //Differenzsignal fuer Aufgabe 3.4
+	wave[i] *= pow(2,16-10-2); //Q-Fehler verst&auml;rken
+  }
+</pre>
+  Bei einer Bitreduktion um 1 bit dominiert das Quantisierungsrauschen, jedoch vermag ein marginaler Anteil der Musik
+  durch dieses Zufallsdickicht hindurchzuschalmeien. Je h&ouml;her die Bitreduktion, desto h&ouml;her ist der Anteil des
+  Originalsignals im Differenzsignal. Daraus l&auml;&szlig;t sich schliessen dass immer gr&ouml;&szlig;ere Informationsanteile aus
+  dem Originalsignal verschwinden.<br/><br/>
+
+  <a href="files/youtube_bitreduzierung-diff-2hoch1.wav">Differenzsignal 1 Bit</a><br/>
+  <img src="img/diff_2hoch1.jpg"/><br/><br/>
+  <a href="files/youtube_bitreduzierung-diff-2hoch4.wav">Differenzsignal 4 Bit</a><br/>
+  <img src="img/diff_2hoch4.jpg"/><br/><br/>
+  <a href="files/youtube_bitreduzierung-diff-2hoch10.wav">Differenzsignal 10 Bit</a><br/>
+  <img src="img/diff_2hoch10.jpg"/><br/><br/>
+
 </p>
 
   </body>
