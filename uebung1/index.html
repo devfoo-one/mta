@@ -197,7 +197,18 @@ Die Datei sine_lo_down.wav entspricht der Originaldatei sine_lo.wav da die Ausga
   indem man mit dem LSB beginnend Bits 'ausblendet'.)
 </p>
 <p class="antwort">
-  Ich bin die Antwort.
+  in wave_io wurde folgender Code eingef&uuml;gt:
+  <pre>
+  read_wave(&wave, &n_wave, &freq_in, &bits_in, in_name, &header);
+  newwave = (short*)malloc(n_wave*sizeof(short)); //Speicher alloziieren
+  for(i=0; i < n_wave; i++) {
+	newwave[i] = wave[i];
+	wave[i] /= pow(2,10);
+	wave[i] *= pow(2,10);
+	wave[i] -= newwave[i]; //Differenzsignal fuer Aufgabe 3.4
+	wave[i] *= pow(2,16-10-2); //Q-Fehler verst&auml;rken
+  }
+  </pre>
 </p>
 
 <h4>3.3</h4>
