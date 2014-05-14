@@ -22,26 +22,49 @@
   im Header ! Wie hoch ist die Bitrate f&uuml;r die beiden Dateien?
 </p>
 <p class="antwort">
-Ich bin die Antwort, bis dahin hier erstmal die Headerdaten.
-<pre>
-  infile: TOMyoutube.wav outfile:
-  filelength 2954998
-  samples 1476422
-  rate 44100
-  bits 16
-  bytes per sample 4
-  channels 2
-</pre>
+Die Headerdaten f&uuml;r unsere Youtube bzw. Sprachaufnahme sind hier erl&auml;utert. Die Bitrate errechnet sich wie folgt: <br/><br/>
+"rate" * "bits" * "channels" = Bitrate (Bits pro Sekunde)
 
-<pre>
-  infile: TOMaufnahme44khz16bit.wav outfile:
-  filelength 3807776
-  samples 1903150
-  rate 44100
-  bits 16
-  bytes per sample 2
-  channels 1
-</pre>
+<table>
+  <tr>
+    <th>infile</th>
+    <th>filelength</th>
+    <th>samples</th>
+    <th>rate</th>
+    <th>bits</th>
+    <th>bytes per sample</th>
+    <th>channels</th>
+    <th><i>(Bitrate)</i><th>
+  </tr>
+  <tr>
+    <td><a href="files/youtube.wav">youtube.wav</a></td>
+    <td>2954998</td>
+    <td>1476422</td>
+    <td>44100</td>
+    <td>16</td>
+    <td>4</td>
+    <td>2</td>
+    <td>1.411.200 Bits pro Sekunde</td>
+  </tr>
+  <tr>
+    <td><a href="files/aufnahme.wav">aufnahme.wav</a></td>
+    <td>3807776</td>
+    <td>1903150</td>
+    <td>44100</td>
+    <td>16</td>
+    <td>2</td>
+    <td>1</td>
+    <td>705.600 Bits pro Sekunde</td>
+  </tr>
+</table>
+
+<br/><b>Erkl&auml;ung der Angaben:</b><br/><br/>
+<b>filelength</b> ist die Dateil&auml;nge in Byte<br/>
+<b>samples</b> ist die Anzahl Samples. Diese setzt sich zusammen aus <i>filelength</i> dividiert durch <i>bytes per sample</i> <br/>
+<b>rate</b> ist die Abtastfrequenz in Hertz<br/>
+<b>bits</b> Anzahl der Bits pro Kanal und Sample. In diesem Fall 16 Bit, also insgesamt 65536 Abtastwerte.<br/>
+<b>bytes per sample</b> Anzahl der bytes pro Sample f&uuml;r alle Kan&auml;le in unserem Fall bei mono = 16 Bit * 1 = 2 Byte, f&uuml;r Stereo 16 Bit * 2 = 4 Byte<br/>
+<b>channels</b> Anzahl der Tonkan&auml;le. Bei Mono = 1, bei Stereo = 2
 
 </p>
 

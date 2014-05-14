@@ -10,3 +10,7 @@ body {
   font-size: 0.8em;
   font-style: italic;
 }
+
+td, th {
+  border: 1px dotted;
+}
