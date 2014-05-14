@@ -79,7 +79,47 @@ Die Headerdaten f&uuml;r unsere Youtube bzw. Sprachaufnahme sind hier erl&auml;u
   Vorgehensweise: Men&uuml;punkt Analyze File, Einstellungen: Freq Scale: Linear, FFT Size: 512, Time scale: 1 msec)
 <p>
 <p class="antwort">
-  Ich bin die Antwort.
+wave_io wurde um folgende Zeilen erweitert:<br/>
+<pre>
+prt=fopen("prt.txt","wt");
+for(i=0; i&lt;n_wave; i++) {
+  fprintf(prt, "%i\n", wave[i]);
+}
+fclose(prt);
+</pre>
+<br/>
+<b>sine_hi:</b>
+<pre>
+0
+10606
+-15000
+10606
+0
+-10606
+15000
+-10606
+0
+...
+</pre>
+<h3>ERKLAERUNG!!!!!!</h3>
+<img src="img/gram_sine_hi.jpg">
+<br/><br/>
+<b>sine_lo:</b>
+<pre>
+0
+13858
+10606
+-5740
+-15000
+-5740
+10606
+13858
+0
+...
+</pre>
+<h3>ERKLAERUNG!!!!!!</h3>
+<img src="img/gram_sine_lo.jpg">
+
 </p>
 
 <h4>2.2</h4>
@@ -120,7 +160,20 @@ Die Headerdaten f&uuml;r unsere Youtube bzw. Sprachaufnahme sind hier erl&auml;u
   bandbegrenzen w&uuml;rde?
 </p>
 <p class="antwort">
-  Ich bin die Antwort.
+wave_io wurde um folgenden Code erweitert:
+<pre>
+for(i=0; i < n_wave/2; i++) {
+	wave[i]=wave[i*2];
+}
+n_wave/=2;
+freq_in/=2;
+</pre>
+<a href="files/sine_lo_down.wav">sine_lo_down.wav</a><br/>
+<a href="files/sine_hi_down.wav">sine_hi_down.wav</a><br/>
+<img src="img/gram_sine_lo_down.jpg">
+<img src="img/gram_sine_hi_down.jpg"><br/><br/>
+Die Datei sine_lo_down.wav entspricht der Originaldatei sine_lo.wav da die Ausgangsfrequenz von 3Khz das Abtasttheorem mit der neuen Abtastfrequenz von 16Khz/2 = 8Khz weiterhin erf&uuml;llt. Bei sine_hi_down.wav sehen wir Aliasing, da das Abtasttheorem f&uuml;r eine Tonfrequenz von 6Khz und einer Abtastfrequenz von 8Khz nicht mehr eingehalten wird. Daraus resultiert eine Spiegelung der Frequenz an der halben Abtastfrequenz, also 6Khz - 4Khz = 2Khz. Wenn man entsprechend bandbegrenzen w&uuml;rde, w&uuml;rde man in der Datei sine_hi_down.wav nichts mehr h&ouml;ren, da alle Frequenzen oberhalb von 4Khz (8Khz / 2 ) vor der Digitalisierung entfernt worden w&auml;ren.
+
 </p>
 
 <h3>3. Aufgabe - Bitreduzierung</h3>
