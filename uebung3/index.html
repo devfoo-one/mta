@@ -54,23 +54,39 @@
   }
   </pre>
 
-  Verstärkung Soundfile
-  <br><a href="files/youtube.wav">ohne Verstärkung</a>
+  <b>Verstärkung Soundfile</b>
+  <br><a href="files/youtube.wav">original Soundfile</a>
   <br><a href="files/youtube_3db.wav">Verstärkung um 3db</a>
   <br><a href="files/youtube_6db.wav">Verstärkung um 6db</a>
-  <br><a href="files/youtube_9db".wav>Verstärkung um 9db</a>
+  <br><a href="files/youtube_9db.wav">Verstärkung um 9db</a>
+  --> Hier wird eine Verzerrung wahrnehmbar
+  <br></br>
 
-  <br>Bei welcher Verstärkung wird eine Verzerrung beim gewählten Soundfile wahrnehmbar? (Source-Ausschnitt, wave und Ausschnitt mit geclippten Bereichen ins Protokoll).
 
-  spektogramm des ausganssignals mit gram berechnen, plot ins protokoll
 
-  Verstärkung Sinusschwingung
-  <br><a href="files/sine_1k_6db.wav">Verstärkung um 6db</a>
+  <b>Verstärkung Sinusschwingung</b>
+  <br><a href="files/sine_1k.wav">original Sinusschwingung</a><br/>
+  <br><a href="files/sine_1k_6db.wav">Verstärkung um 6db</a><br/>
+  <img src="img/sine_1k_6db.png"/><br/>
+  Klirrfaktor = 0, keine zusätzlichen Obertöne<br/>
+  <br></br>
+  <a href="files/sine_1k_9db.wav">Verstärkung um 9db</a><br/>
+  <img src="img/sine_1k_9db.png"/><br/>
+  1. Oberton: 982Hz, -23dB<br>
+  2. Oberton: 2964Hz, -42dB<br>
+  3. Oberton: 4911Hz, -51dB<br>
+  4. Oberton: 6976Hz, -59dB<br>
+
   Klirrfaktor =<br/>
-  <a href="files/sine_1k_9db.wav">Verstärkung um 9db</a>
-  Klirrfaktor =<br/>
-  <a href="files/sine_1k_12db.wav">Verstärkung um 12db</a>
+  <br></br>
+  <a href="files/sine_1k_12db.wav">Verstärkung um 12db</a><br/>
+  <img src="img/sine_1k_12db.png"/><br/>
+  1. Oberton: 991Hz, -21dB<br>
+  2. Oberton: 2989Hz, -35dB<br>
+  3. Oberton: 4953Hz, -53dB<br>
+  4. Oberton: 6916Hz, -65dB<br>
   Klirrfaktor = <br/>
+  <br></br>
   
 
 
@@ -101,8 +117,6 @@ Eingefügter Code:
  wave = newwave;
 </pre>
 
-<p>Um wieviele Abtastwerte müssen wir verzögern, wenn wir mit einer Abtastrate von 44.1 kHz arbeiten????</p>
-
 <b>Sprachsignal</b></br>
 <a href="files/aufnahme44khz16bit_ECHO_10ms.wav">Verzögerung 10ms</a></br>
 <a href="files/aufnahme44khz16bit_ECHO_200ms.wav">Verzögerung 200ms</a></br>
@@ -110,7 +124,10 @@ Eingefügter Code:
 
 <br><b>Musiksignal</b></br>
 <a href="files/youtube_ECHO_10ms.wav">Verzögerung 10ms</a></br>
-<a href="files/youtube_ECHO_200ms.wav">Verzögerung 200ms</a></br>
+<a href="files/youtube_ECHO_200ms.wav">Verzögerung 200ms</a>
+ <br/><br/>
+Verzögerung 10 ms = 441 (10 * 44100 / 1000)<br>
+Verzögerung 200 ms = 2210 (200 * 44100 / 1000)
 
 
 
