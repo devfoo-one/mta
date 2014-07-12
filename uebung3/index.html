@@ -32,8 +32,8 @@
   Dazu muß man die dB-Angaben aus GRAM in lineare Angaben zurückrechnen (siehe Aufgabe 2.1).
 </p>
 <p class="antwort">
-  Eingefügter Code: 
-  
+  Eingefügter Code:
+
   <pre>
   prt=fopen("prt.txt","wt");
   for(i=0; i&lt;n_wave; i++) {
@@ -44,7 +44,7 @@
   for(i=0; i&lt;n_wave; i++){
     f_wave = wave[i]; //wave kopieren
     f_wave *= a; //Verstärkung mit Faktor a
-    wave[i] = f_wave; //1 
+    wave[i] = f_wave; //1
     if(f_wave > 32767){ //2
       wave[i] = 32767;
     }
@@ -55,39 +55,42 @@
   </pre>
 
   <b>Verstärkung Soundfile</b>
-  <br><a href="files/youtube.wav">original Soundfile</a>
-  <br><a href="files/youtube_3db.wav">Verstärkung um 3db</a>
-  <br><a href="files/youtube_6db.wav">Verstärkung um 6db</a>
-  <br><a href="files/youtube_9db.wav">Verstärkung um 9db</a>
+  <br/><a href="files/youtube.wav">original Soundfile</a>
+  <br/><a href="files/youtube_3db.wav">Verstärkung um 3db</a>
+  <br/><a href="files/youtube_6db.wav">Verstärkung um 6db</a>
+  <br/><a href="files/youtube_9db.wav">Verstärkung um 9db</a>
   --> Hier wird eine Verzerrung wahrnehmbar
-  <br></br>
+  <br/>
+  <img src="img/youtube9db.jpg"/>
+
+  <br/><br/>
 
 
 
   <b>Verstärkung Sinusschwingung</b>
-  <br><a href="files/sine_1k.wav">original Sinusschwingung</a><br/>
-  <br><a href="files/sine_1k_6db.wav">Verstärkung um 6db</a><br/>
+  <br/><a href="files/sine_1k.wav">original Sinusschwingung</a><br/>
+  <br/><a href="files/sine_1k_6db.wav">Verstärkung um 6db</a><br/>
   <img src="img/sine_1k_6db.png"/><br/>
   Klirrfaktor = 0, keine zusätzlichen Obertöne<br/>
-  <br></br>
+  <br/><br/>
   <a href="files/sine_1k_9db.wav">Verstärkung um 9db</a><br/>
   <img src="img/sine_1k_9db.png"/><br/>
-  1. Oberton: 982Hz, -23dB<br>
-  2. Oberton: 2964Hz, -42dB<br>
-  3. Oberton: 4911Hz, -51dB<br>
-  4. Oberton: 6976Hz, -59dB<br>
+  1. Oberton: 982Hz, -23dB<br/>
+  2. Oberton: 2964Hz, -42dB<br/>
+  3. Oberton: 4911Hz, -51dB<br/>
+  4. Oberton: 6976Hz, -59dB<br/>
 
   Klirrfaktor =<br/>
-  <br></br>
+  <br/><br/>
   <a href="files/sine_1k_12db.wav">Verstärkung um 12db</a><br/>
   <img src="img/sine_1k_12db.png"/><br/>
-  1. Oberton: 991Hz, -21dB<br>
-  2. Oberton: 2989Hz, -35dB<br>
-  3. Oberton: 4953Hz, -53dB<br>
-  4. Oberton: 6916Hz, -65dB<br>
+  1. Oberton: 991Hz, -21dB<br/>
+  2. Oberton: 2989Hz, -35dB<br/>
+  3. Oberton: 4953Hz, -53dB<br/>
+  4. Oberton: 6916Hz, -65dB<br/>
   Klirrfaktor = <br/>
-  <br></br>
-  
+  <br/><br/>
+
 
 
 
@@ -102,7 +105,7 @@
 <p class="antwort">
 Eingefügter Code:
 <pre>
- newwave = (short *) malloc(n_wave * sizeof(short)); 
+ newwave = (short *) malloc(n_wave * sizeof(short));
  N = 441*2; // 10msec bei 44100Hz Samplingrate * 2 Kanaele
  N = 8820*2; // 10msec bei 44100Hz Samplingrate * 2 Kanaele
  for(k=0; k&lt;n_wave; k+=2){
@@ -117,16 +120,16 @@ Eingefügter Code:
  wave = newwave;
 </pre>
 
-<b>Sprachsignal</b></br>
-<a href="files/aufnahme44khz16bit_ECHO_10ms.wav">Verzögerung 10ms</a></br>
-<a href="files/aufnahme44khz16bit_ECHO_200ms.wav">Verzögerung 200ms</a></br>
+<b>Sprachsignal</b><br/>
+<a href="files/aufnahme44khz16bit_ECHO_10ms.wav">Verzögerung 10ms</a><br/>
+<a href="files/aufnahme44khz16bit_ECHO_200ms.wav">Verzögerung 200ms</a><br/>
 
 
-<br><b>Musiksignal</b></br>
-<a href="files/youtube_ECHO_10ms.wav">Verzögerung 10ms</a></br>
+<br/><b>Musiksignal</b><br/>
+<a href="files/youtube_ECHO_10ms.wav">Verzögerung 10ms</a><br/>
 <a href="files/youtube_ECHO_200ms.wav">Verzögerung 200ms</a>
  <br/><br/>
-Verzögerung 10 ms = 441 (10 * 44100 / 1000)<br>
+Verzögerung 10 ms = 441 (10 * 44100 / 1000)<br/>
 Verzögerung 200 ms = 2210 (200 * 44100 / 1000)
 
 
@@ -147,9 +150,9 @@ Zum Testen unserer Filter verwenden wir Weißes Rauschen, das alle Frequenzen en
 
 <p class="antwort">
   Eingefügter Code für Mono:
-  
+
   <pre>
-  newwave = (short *) malloc(n_wave * sizeof(short)); 
+  newwave = (short *) malloc(n_wave * sizeof(short));
   for(k=0; k&lt;n_wave; k++){
     if(k>0) {
       //newwave[k] = 0.5 * wave[k] + 0.45 * wave[k-1]; // Tiefpassfilter
@@ -157,13 +160,13 @@ Zum Testen unserer Filter verwenden wir Weißes Rauschen, das alle Frequenzen en
     } else {
       newwave[k] = 0.5 * wave[k];
     }
-  }  
+  }
  wave = newwave;
   </pre>
 
   Eingefügter Code für Stereo:
   <pre>
-  newwave = (short *) malloc(n_wave * sizeof(short)); 
+  newwave = (short *) malloc(n_wave * sizeof(short));
   for(k=0; k&lt;n_wave; k+=2){
     if(k>0) {
       newwave[k] = 0.5 * wave[k] + 0.45 * wave[k-2];
@@ -172,21 +175,21 @@ Zum Testen unserer Filter verwenden wir Weißes Rauschen, das alle Frequenzen en
       newwave[k] = 0.5 * wave[k];
       newwave[k+1] = 0.5 * wave[k+1];
     }
-  }  
+  }
  wave = newwave;
 
   </pre>
-  <b>Musikdatei</b><br>
-  <a href="files/NOISE.wav">Vor der Filterung</a><br>
-  <a href="files/NOISE_FILTER_Tiefpass.wav">Tiefpassfilter</a><br>
-  <a href="files/NOISE_FILTER_Hochpass.wav">Hochpassfilter</a><br>
+  <b>Musikdatei</b><br/>
+  <a href="files/NOISE.wav">Vor der Filterung</a><br/>
+  <a href="files/NOISE_FILTER_Tiefpass.wav">Tiefpassfilter</a><br/>
+  <a href="files/NOISE_FILTER_Hochpass.wav">Hochpassfilter</a><br/>
 
-  <br></br>
+  <br/><br/>
 
-  <b>Plots:</b></br>
-  oben rechts: Hochpass</br>
-  mitte links: unbearbeitet</br>
-  unten rechts: Tiefpass</br>
+  <b>Plots:</b><br/>
+  oben rechts: Hochpass<br/>
+  mitte links: unbearbeitet<br/>
+  unten rechts: Tiefpass<br/>
   <img src="img/FILTER.png"/><br/>
 
 </p>
