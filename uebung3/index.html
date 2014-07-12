@@ -141,11 +141,8 @@ Verzögerung 200 ms = 2210 (200 * 44100 / 1000)
 
 <h4>3.3 Einfaches Filter</h4>
 <p class="aufgabe">
-  Ein sehr einfaches Filter kann man z.B. mit der Zuordnungsvorschrift (a) y(k)=0.5*x(k)+0.45*x(k-1) realisieren. Programmiere das Filter und vergleiche eine Musicdatei vor und nach der Filterung. Tue dasselbe mit der Zuordnungsvorschrift (b)
-   <br/><br/>
+  Ein sehr einfaches Filter kann man z.B. mit der Zuordnungsvorschrift (a) y(k)=0.5*x(k)+0.45*x(k-1) realisieren. Programmiere das Filter und vergleiche eine Musicdatei vor und nach der Filterung. Tue dasselbe mit der Zuordnungsvorschrift (b) y(k) = 0.5 * x(k) - 0.45 * x(k-1). Um was für eine Art Filter handelt es sich jeweils ? (waves Original, Filter a) und b) ins Protokoll).
 
-y(k) = 0.5 * x(k) - 0.45 * x(k-1). Um was für eine Art Filter handelt es sich jeweils ? (waves Original, Filter a) und b) ins Protokoll)
-   <br/><br/>
 Zum Testen unserer Filter verwenden wir Weißes Rauschen, das alle Frequenzen enthält. Wenn wir nun das Original-Spektrum (oben) mit den gefilterten vergleichen, sollte sich ein Bild wie in der Mitte und unten ergeben, anderenfalls ist etwas mit dem Programm nicht in Ordnung (welcher Output von welchem Filter stammt, wird nicht verraten ! Das müßt Ihr selber herausfinden.) Um eine Glättung des Spektrums zu erzielen, bei GRAM 'Spectrum Average' auf 100 setzen. (Plots der eigenen Spektren ins Protokoll !)
 </p>
 
@@ -180,18 +177,23 @@ Zum Testen unserer Filter verwenden wir Weißes Rauschen, das alle Frequenzen en
  wave = newwave;
 
   </pre>
-  <b>Musikdatei</b><br/>
+  <h5>Musikdatei</h5>
   <a href="files/NOISE.wav">Vor der Filterung</a><br/>
   <a href="files/NOISE_FILTER_Tiefpass.wav">Tiefpassfilter</a><br/>
   <a href="files/NOISE_FILTER_Hochpass.wav">Hochpassfilter</a><br/>
 
   <br/><br/>
 
-  <b>Plots:</b><br/>
-  oben rechts: Hochpass<br/>
-  mitte links: unbearbeitet<br/>
-  unten rechts: Tiefpass<br/>
-  <img src="img/FILTER.png"/><br/>
+  <h5>Plots:</h5>
+
+  <h5> Weißes Rauschen (vor der Filterung)</h5>
+  <img src="img/noise.jpg"/>
+
+  <h5>(a) y(k) = 0.5 * x(k) + 0.45 * x(k-1) (Tiefpassfilter)</h5>
+  <img src="img/tiefpass.jpg"/>
+
+  <h5>(b) y(k) = 0.5 * x(k) - 0.45 * x(k-1) (Hochpassfilter)</h5>
+  <img src="img/hochpass.jpg"/>
 
 </p>
 
